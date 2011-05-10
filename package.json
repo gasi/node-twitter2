@@ -7,7 +7,8 @@
     "dependencies": {
         "coffee-script": "1.x",
         "oauth": "0.9.x",
-        "streamline": ">=0.1.x >=0.1.20"
+        "streamline": "0.1.x >=0.1.20",
+        "underscore": "1.1.x >=1.1.6"
     },
     "keywords": [
         "twitter",
