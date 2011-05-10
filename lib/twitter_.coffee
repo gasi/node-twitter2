@@ -72,7 +72,6 @@ class Twitter
                                   contentType,
                                   _
         catch err
-            console.log err
             error = new Error "HTTP Error #{err.statusCode}: #{status[err.statusCode]}"
             error.statusCode = err.statusCode
             error.data = err.data
