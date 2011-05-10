@@ -1,0 +1,31 @@
+{
+    "name": "twitter2",
+    "description": "Twitter API client for Node",
+    "version": "0.0.1",
+    "author": "Daniel Gasienica <daniel@gasienica.ch>",
+    "main": "./lib",
+    "dependencies": {
+        "coffee-script": "1.x",
+        "oauth": "0.9.x",
+        "streamline": ">=0.1.x >=0.1.20"
+    },
+    "keywords": [
+        "twitter",
+        "api",
+        "node",
+        "rest"
+    ],
+    "licenses": [
+        {
+            "type": "Apache License, Version 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    ],
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/gasi/node-twitter2.git"
+    },
+    "engines": {
+        "node": ">= 0.4.2"
+    }
+}
