@@ -4,7 +4,8 @@ qs = require 'querystring'
 status = require 'http-status'
 
 
-VERSION = '0.0.1'
+VERSION = '0.0.2'
+
 
 class Twitter
 
@@ -81,7 +82,7 @@ class Twitter
         return json
 
 
-    ### Friendship ###
+    # Friendship
 
     existsFriendship: (userA, userB, _) ->
 
@@ -94,11 +95,7 @@ class Twitter
 
     createFriendship: (params, _) ->
 
-        if not params? or not (params.user_id or params.screen_name)
-            throw new Error 'You must specify either `user_id` or `screen_name`.'
-
-        if params.user_id? and params.screen_name?
-            throw new Error '''You can't specify both `user_id` and `screen_name`.'''
+        ensureUser params
 
         params = $.defaults params,
                         follow: true
@@ -107,4 +104,26 @@ class Twitter
         @post '/friendships/create.json', params, null, _
 
 
+    # Direct message
+
+    newDirectMessage: (params, _) ->
+
+        ensureUser params
+
+        @post '/direct_messages/new.json', params, null, _
+
+
+# Exports
+
 module.exports = Twitter
+
+
+# Helpers
+
+ensureUser = (params) ->
+
+        if not params? or not (params.user_id or params.screen_name)
+            throw new Error 'You must specify either `user_id` or `screen_name`.'
+
+        if params.user_id? and params.screen_name?
+            throw new Error '''You can't specify both `user_id` and `screen_name`.'''
