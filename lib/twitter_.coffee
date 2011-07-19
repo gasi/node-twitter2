@@ -94,11 +94,7 @@ class Twitter
 
     createFriendship: (params, _) ->
 
-        if not params? or not (params.user_id or params.screen_name)
-            throw new Error 'You must specify either `user_id` or `screen_name`.'
-
-        if params.user_id? and params.screen_name?
-            throw new Error '''You can't specify both `user_id` and `screen_name`.'''
+        ensureUser params
 
         params = $.defaults params,
                         follow: true
@@ -108,3 +104,14 @@ class Twitter
 
 
 module.exports = Twitter
+
+
+# Helpers
+
+ensureUser = (params) ->
+
+        if not params? or not (params.user_id or params.screen_name)
+            throw new Error 'You must specify either `user_id` or `screen_name`.'
+
+        if params.user_id? and params.screen_name?
+            throw new Error '''You can't specify both `user_id` and `screen_name`.'''
