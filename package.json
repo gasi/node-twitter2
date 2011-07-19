@@ -1,7 +1,7 @@
 {
     "name": "twitter2",
     "description": "Twitter API client for Node",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "Daniel Gasienica <daniel@gasienica.ch>",
     "main": "./lib",
     "dependencies": {
