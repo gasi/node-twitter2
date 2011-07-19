@@ -103,6 +103,13 @@ class Twitter
         @post '/friendships/create.json', params, null, _
 
 
+    # Direct message
+
+    newDirectMessage: (params, _) ->
+
+        ensureUser params
+
+        @post '/direct_messages/new.json', params, null, _
 
 
 # Exports
