@@ -81,7 +81,7 @@ class Twitter
         return json
 
 
-    ### Friendship ###
+    # Friendship
 
     existsFriendship: (userA, userB, _) ->
 
@@ -102,6 +102,10 @@ class Twitter
 
         @post '/friendships/create.json', params, null, _
 
+
+
+
+# Exports
 
 module.exports = Twitter
 
