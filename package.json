@@ -6,6 +6,7 @@
     "main": "./lib",
     "dependencies": {
         "coffee-script": "1.1.x >= 1.1.2",
+        "http-status": "0.1.0",
         "oauth": "0.9.x",
         "streamline": "0.1.x >= 0.1.41",
         "underscore": "1.1.x >=1.1.6"
