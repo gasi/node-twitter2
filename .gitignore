@@ -1,2 +1,5 @@
 .DS_Store
 test/
+
+# for npm 1.0:
+node_modules/
